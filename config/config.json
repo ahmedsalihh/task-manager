@@ -1,0 +1,25 @@
+{
+  "development": {
+    "CONFIG_ID": "development",
+    "APP_NAME": "task manager",
+    "APP_DESC": "task manager",
+    "LOG_LEVEL": "info",
+    "PORT": 5000,
+    "DB": "mongodb://localhost:27017/commtask",
+    "JSON_INDENTATION": 4
+  },
+  "testing": {
+    "CONFIG_ID": "testing",
+    "DB": "my-app-db-test"
+  },
+  "staging": {
+    "CONFIG_ID": "staging",
+    "PORT": 5000,
+    "DB": "my-app-db-stag"
+  },
+  "production": {
+    "CONFIG_ID": "production",
+    "PORT": 5000,
+    "DB": "my-app-db-prod"
+  }
+}

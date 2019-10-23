@@ -1,0 +1,4 @@
+node_modules/
+.vdcode
+app.log
+package-lock.json

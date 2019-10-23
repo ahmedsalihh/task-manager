@@ -1,0 +1,29 @@
+{
+  "name": "scenario",
+  "version": "1.0.0",
+  "description": "scenario editor backend service",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "scenario",
+    "backend"
+  ],
+  "author": "Ugur ACAR",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2018": "^1.0.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "lodash": "latest",
+    "mongoose": "latest",
+    "winston": "^3.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  }
+}
