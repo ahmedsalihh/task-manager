@@ -1,4 +1,4 @@
 node_modules/
-.vdcode
+.vscode/
 app.log
 package-lock.json
