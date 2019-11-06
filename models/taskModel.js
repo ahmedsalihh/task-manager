@@ -6,6 +6,11 @@ var taskSchema = mongoose.Schema({
     required: true,
   },
 
+  desc: {
+    type: String,
+    required: false,
+  },
+
   task_status: {
     type: Boolean,
     default: false,

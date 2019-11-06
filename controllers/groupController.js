@@ -96,3 +96,39 @@ exports.delete = function(req, res) {
     },
   );
 };
+
+exports.updateTask = function(req, res) {
+  try {
+    Group.findOneAndUpdate(
+      { _id: req.params.groupId },
+      { $set: { 'taskList.$[elem]': req.body.task } },
+      {
+        arrayFilters: [
+          {
+            'elem._id': req.body.task._id,
+          },
+        ],
+        new: true,
+      },
+    )
+      .exec()
+      .then(result => {
+        res.json({
+          status: 'success',
+          message: 'Task Added',
+          result,
+        });
+      })
+      .catch(err => {
+        res.json({
+          status: 'error',
+          message: err,
+        });
+      });
+  } catch (error) {
+    res.json({
+      status: 'error',
+      message: err,
+    });
+  }
+};

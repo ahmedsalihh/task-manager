@@ -7,20 +7,20 @@ router.get('/', function(req, res) {
   });
 });
 
-var taskController = require('./controllers/taskController');
+// var taskController = require('./controllers/taskController');
 var userController = require('./controllers/userController');
 var groupController = require('./controllers/groupController');
 
-router
-  .route('/tasks')
-  .get(taskController.index)
-  .post(taskController.new);
+// router
+//   .route('/tasks')
+//   .get(taskController.index)
+//   .post(taskController.new);
 
-router
-  .route('/tasks/:task_id')
-  .get(taskController.view)
-  .patch(taskController.update)
-  .delete(taskController.delete);
+// router
+//   .route('/tasks/:task_id')
+//   .get(taskController.view)
+//   .patch(taskController.update)
+//   .delete(taskController.delete);
 
 router
   .route('/groups')
@@ -28,8 +28,8 @@ router
   .post(groupController.new);
 
 router.route('/addUser/:groupId').put(groupController.addUserToGroup);
-
 router.route('/addTask/:groupId').put(groupController.addTaskToGroup);
+router.route('/updateTask/:groupId').put(groupController.updateTask);
 
 router
   .route('/user')
