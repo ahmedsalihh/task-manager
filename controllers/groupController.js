@@ -82,6 +82,35 @@ exports.addTaskToGroup = function(req, res) {
   }
 };
 
+exports.deleteTaskFromGroup = function(req, res) {
+  try {
+    Group.findByIdAndUpdate(
+      { _id: req.params.groupId },
+      { $pull: { taskList: { _id: req.params.taskId } } },
+      { new: true, safe: true, upsert: true },
+    )
+      .exec()
+      .then(result => {
+        res.json({
+          status: 'success',
+          message: 'Task Deleted',
+          result,
+        });
+      })
+      .catch(err => {
+        res.json({
+          status: 'error',
+          message: err,
+        });
+      });
+  } catch (error) {
+    res.json({
+      status: 'error',
+      message: err,
+    });
+  }
+};
+
 exports.delete = function(req, res) {
   Group.deleteOne(
     {
