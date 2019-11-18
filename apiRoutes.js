@@ -30,7 +30,7 @@ router
 router.route('/addUser/:groupId').put(groupController.addUserToGroup);
 router.route('/addTask/:groupId').put(groupController.addTaskToGroup);
 router.route('/updateTask/:groupId').put(groupController.updateTask);
-router.route('/deleteTask/:groupId/:taskId').put(groupController.deleteTaskFromGroup);
+router.route('/deleteTask/:groupId/:taskId').delete(groupController.deleteTaskFromGroup);
 
 router
   .route('/user')
